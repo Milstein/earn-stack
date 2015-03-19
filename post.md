@@ -199,6 +199,7 @@ api.post('/',function(req,res){
 
 ###End Note
 This was just a basic setup tutorial and it does not even began to portray it's Power. I have created this tutorial to help fellow developers get over the initial barier of setting up the development stack and get started with creating amazing apps.
+Since in most general cases, you need a persistent storage backing your application, you can use Redis as a persistence storage and there is a great article about it on their [website](http://redis.io/topics/persistence "Redis Persistence Storage").
 
 ##Happy Coding!!
 
