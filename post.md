@@ -81,29 +81,28 @@ module.exports = (function() {
 	return api;
 })();
 ```
-Although right-now we are sending hard-coded values, we will be building on this to serve different request and send corredponding responses.
+Although right-now we are sending hard-coded values, we will be building on this to serve different request and send corresponding responses.
 
 Again, To check that everything is working, execute `node ./bin/www`, and in browser open http://localhost:3000. This time index.html file would be rendered
 
 ### Setup AngularJS
-We want to build a single page application so we will have a templates file `index.html` and inside that we would display different views based on path requested.
+We want to build a single page application so we will have a view file `index.html` and inside that we would display different templates based on path requested.
 1. Create a module.js file in public folder (empty as of now).
 2. In index.html file:
   - include [angular.js](//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js) file (I prefer using google cdn) and [angular-route.js](https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js) file
   - include module.js file
   - Anyother css file you would use for styling (i.e. Bootstrap v3 or Angular Material)
-  - Add `<ng-view></ng-view>` in the `<body>` tag and remove everything else.
+  - Add `<ng-view></ng-view>` inside the `<body>` tag and remove everything else.
   - Add `ng-app="earnfrontend" ng-controller="AppCtrl"` as attributes of <html> tag. ng-app directive defines an Angular app and ng-controller directive defines which application controller has access.
 
-Uptil now we have created a template which we will apply to every view which is rendered. Template gives uniformity to overall application and makes it easy to manage all the required js/css files.
+Uptil now we have created a view which we will apply to every template which is rendered. Views gives uniformity to overall application and makes it easy to manage all the required js/css files.
 
-Now, create a html file in views folder and create a route in `view.js` which renders that html file:
+Now, create a *templates* folder inside *views* folder and create a `home.html` file in it. Create a route in `view.js` which renders that html file:
 ```javascript
 viewsRoute.get('/home', function(req, res) {
-		res.render('home');
+		res.render('templates/home');
 	});
 ```
-
 Next, open the module.js file and add the following:
 ```javascript
 var mainmodule = angular.module('earnfrontend', ['ngRoute']);
