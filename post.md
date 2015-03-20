@@ -183,7 +183,7 @@ mainmodule.controller('ListController', function($scope, $http) {
     });
 ```
 
-On the server, handle GET and POST calls on path `"/"`. On received the call, the function will either extract items from list or push a new item on the list:
+On the server, handle GET and POST calls on path `"/"`. On receiving the call, the function will either extract items from list or push a new item on the list:
 ```javascript
 api.get('/',function(req,res){
 	client.lrange('mylist','0','-1',function(err,reply){
@@ -196,7 +196,9 @@ api.post('/',function(req,res){
 	res.json({"result":"received"});
 });
 ```
-
+###Result
+Now start the server again and open http://localhost:3000. You will see a simple text box in which you can type something to add to list and when you send it, it gets updated in the server and get displayed to the user.
+![Result](http://i.imgur.com/mMKHcCT.png)
 ###End Note
 This was just a basic setup tutorial and it does not even began to portray it's Power. I have created this tutorial to help fellow developers get over the initial barier of setting up the development stack and get started with creating amazing apps.
 Since in most general cases, you need a persistent storage backing your application, you can use Redis as a persistence storage and there is a great article about it on their [website](http://redis.io/topics/persistence "Redis Persistence Storage").
